@@ -1,26 +1,42 @@
-import React from 'react';
-import { Button, Navbar, Menu } from 'react-daisyui';
+import React, { useState } from 'react';
+import { Button, Navbar, Menu, Drawer } from 'react-daisyui';
 
 const PAGES = ['Past Work', 'About', 'Blog'];
 const NavbarComp = () => {
+  const [visible, setVisible] = useState(false);
+  const toggleVisible = () => setVisible(!visible);
   return (
-    <div className="pb-40 flex w-full component-preview p-4 items-center justify-center gap-2 font-sans">
+    <Drawer open={visible} onClickOverlay={toggleVisible} className="font-sans">
       <Navbar>
-        <Navbar.Start>
-          <Button className="text-xl upper-case" color="ghost">
-            Tim Dev.
+        <div className="flex-none lg:hidden">
+          <Button shape="square" color="ghost" onClick={toggleVisible}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="inline-block w-6 h-6 stroke-current"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
           </Button>
-        </Navbar.Start>
-        <Navbar.Center className="hidden lg:flex">
-          <Menu horizontal className="p-0">
-            {PAGES.map((page, index) => (
-              <Menu.Item key={index}>{page}</Menu.Item>
+        </div>
+        <div className="flex-1 px-2 mx-2">Tim Dev.</div>
+        <div className="flex-none hidden lg:block">
+          <Menu horizontal={true}>
+            {PAGES.map((page) => (
+              <Menu.Item key={page}>
+                <a href="#">{page}</a>
+              </Menu.Item>
             ))}
           </Menu>
-        </Navbar.Center>
-        <Navbar.End></Navbar.End>
+        </div>
       </Navbar>
-    </div>
+    </Drawer>
   );
 };
 
