@@ -1,10 +1,16 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+import Navbar from './Components/Navbar';
+import About from './Components/About';
+import Projects from './Components/Projects';
+import Contact from './Components/Contact';
 function App() {
   return (
     <main className="App">
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Button variant="contained">Hello World</Button>
+      <Navbar />
+      <About />
+      <Projects />
+      <Contact />
     </main>
   );
 }
