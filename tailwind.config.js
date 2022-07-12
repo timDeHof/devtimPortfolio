@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
+  darkMode: false,
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -12,6 +13,6 @@ module.exports = {
         blue3: '#4DB5FF',
       },
     },
-    plugins: [],
+    plugins: [require('tw-elements/dist/plugin')],
   },
 };
