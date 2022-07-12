@@ -1,13 +1,7 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
-  return (
-    <nav className="fixed top-0 bg-primary">
-      <ul>
-        <li></li>
-      </ul>
-    </nav>
-  );
+  return;
 };
 
 export default Navbar;
