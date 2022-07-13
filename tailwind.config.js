@@ -3,7 +3,10 @@ module.exports = {
   mode: 'jit',
   darkMode: false,
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -13,6 +16,6 @@ module.exports = {
         blue3: '#4DB5FF',
       },
     },
-    plugins: [require('tw-elements/dist/plugin')],
+    plugins: [require('flowbite/plugin')],
   },
 };
