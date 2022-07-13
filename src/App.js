@@ -4,7 +4,6 @@ import { ReactComponent as Logo } from './TIM-DEV.svg';
 import { FaBars, FaUser, FaBook } from 'react-icons/fa';
 import { MdOutlineEmail, MdOutlineArticle } from 'react-icons/md';
 import { AiOutlineClose } from 'react-icons/ai';
-
 function App() {
   return (
     <main className="App">
@@ -32,7 +31,7 @@ const Navbar = () => {
         <Logo className="logo" />
       </Link>
       <nav className="h-auto md:h-24 p2 bg-blue2 max-w-6xl mx-auto pb-1 pl-1 flex justify-between md:items-center">
-        <div className="nav-bar">
+        <div className={togglerNav ? 'md:hidden' : 'nav-bar'}>
           <NavLink className="nav-link" to="/about" onClick={clickHandler}>
             <FaUser />
           </NavLink>
