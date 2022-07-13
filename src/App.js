@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from './TIM-DEV.svg';
 import { FaBars, FaUser, FaBook } from 'react-icons/fa';
 import { MdOutlineEmail, MdOutlineArticle } from 'react-icons/md';
 import { AiOutlineClose } from 'react-icons/ai';
+
 function App() {
   return (
     <main className="App">
