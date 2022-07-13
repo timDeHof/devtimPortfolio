@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Outlet, Link, NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from './TIM-DEV.svg';
+import { FaBars, FaUser, FaBook } from 'react-icons/fa';
+import { MdOutlineEmail, MdOutlineArticle } from 'react-icons/md';
+import { AiOutlineClose } from 'react-icons/ai';
 function App() {
   return (
     <main className="App">
@@ -9,6 +12,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
@@ -17,29 +21,38 @@ function App() {
 }
 
 const Navbar = () => {
+  const [togglerNav, setTogglerNav] = useState(false);
+  const clickHandler = () => {
+    setTogglerNav(!togglerNav);
+  };
   return (
-    <nav className="border-b-[3px] pb-1 pl-1 bg-primary flex justify-between">
+    <div className="flex items-center">
       <Link to="/">
         <Logo className="logo" />
       </Link>
-      <div className="p-4">
-        <NavLink className="nav-link" to="/">
-          Home
-        </NavLink>
-        <NavLink className="nav-link" to="/about">
-          About Me
-        </NavLink>
-        <NavLink className="nav-link" to="/portfolio">
-          Past Work
-        </NavLink>
-        <NavLink className="nav-link" to="/contact">
-          Contact
-        </NavLink>
-      </div>
+      <nav className="h-auto md:h-24 p2 bg-blue2 max-w-6xl mx-auto pb-1 pl-1 flex justify-between md:items-center">
+        <div className="nav-bar">
+          <NavLink className="nav-link" to="/about" onClick={clickHandler}>
+            <FaUser />
+          </NavLink>
+          <NavLink className="nav-link" to="/portfolio" onClick={clickHandler}>
+            <FaBook />
+          </NavLink>
+          <NavLink className="nav-link" to="/blog" onClick={clickHandler}>
+            <MdOutlineArticle />
+          </NavLink>
+          <NavLink className="nav-link" to="/contact" onClick={clickHandler}>
+            <MdOutlineEmail />
+          </NavLink>
+        </div>
+      </nav>
       <Link to="/contact">
-        <button className="container blue3">Contact me</button>
+        <button className="contact-btn">Hire me</button>
       </Link>
-    </nav>
+      <button className="hamburger" onClick={clickHandler}>
+        {togglerNav ? <FaBars /> : <AiOutlineClose />}
+      </button>
+    </div>
   );
 };
 const Home = () => {
@@ -53,6 +66,13 @@ const About = () => {
   return (
     <>
       <h1>About Me</h1>
+    </>
+  );
+};
+const Blog = () => {
+  return (
+    <>
+      <h1>Blog</h1>
     </>
   );
 };
