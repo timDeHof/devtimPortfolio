@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Routes, Route, Outlet, Link, NavLink } from 'react-router-dom';
-import { ReactComponent as Logo } from './TIM-DEV.svg';
-import { FaBars, FaUser, FaBook } from 'react-icons/fa';
-import { MdOutlineEmail, MdOutlineArticle } from 'react-icons/md';
+import { ReactComponent as Logo } from './Images/TIM-DEV.svg';
+import {
+  FaBars,
+  FaUser,
+  FaBook,
+  FaRegEnvelope,
+  FaNewspaper,
+} from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 
 function App() {
@@ -32,7 +37,7 @@ const Navbar = () => {
         <Logo className="logo" />
       </Link>
       <nav className="h-auto md:h-24 p2 bg-blue2 max-w-6xl mx-auto pb-1 pl-1 flex justify-between md:items-center">
-        <div className={togglerNav ? 'md:hidden' : 'nav-bar'}>
+        <div className="nav-bar">
           <NavLink className="nav-link" to="/about" onClick={clickHandler}>
             <FaUser />
           </NavLink>
@@ -40,10 +45,10 @@ const Navbar = () => {
             <FaBook />
           </NavLink>
           <NavLink className="nav-link" to="/blog" onClick={clickHandler}>
-            <MdOutlineArticle />
+            <FaNewspaper />
           </NavLink>
           <NavLink className="nav-link" to="/contact" onClick={clickHandler}>
-            <MdOutlineEmail />
+            <FaRegEnvelope />
           </NavLink>
         </div>
       </nav>
@@ -58,16 +63,19 @@ const Navbar = () => {
 };
 const Home = () => {
   return (
-    <div className="container p-1">
-      <h1>Home</h1>
+    <div className="container text-center p-1">
+      <About />
+      <Portfolio />
+      <Blog />
+      <Contact />
     </div>
   );
 };
 const About = () => {
   return (
-    <>
+    <section>
       <h1>About Me</h1>
-    </>
+    </section>
   );
 };
 const Blog = () => {
@@ -97,7 +105,7 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <main className="container p-1 bg-green-700">
+      <main>
         <Outlet />
       </main>
     </>
