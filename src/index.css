@@ -16,7 +16,7 @@ body {
 }
 
 .nav-link {
-  @apply mx-4 bg-blue3 mt-2 mb-2 px-4 py-2 rounded-xl text-white;
+  @apply mx-4 bg-blue3 mt-1 mb-1 px-4 py-2 rounded-xl text-white;
 }
 
 .active {
@@ -28,7 +28,7 @@ body {
 }
 
 .contact-btn {
-  @apply bg-blue3 px-4 py-2 rounded-xl text-white ml-4 mr-4;
+  @apply bg-blue3 px-4 py-2 rounded-full text-white ml-4 mr-4;
 }
 
 .hamburger {
