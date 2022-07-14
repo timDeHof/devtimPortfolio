@@ -24,11 +24,11 @@ body {
 }
 
 .logo {
-  @apply inline-block w-14 h-14 ml-4;
+  @apply inline-block w-20 h-20;
 }
 
 .contact-btn {
-  @apply bg-blue3 px-4 py-1 inline-block rounded-full text-white sm:ml-4 sm:mr-4;
+  @apply bg-blue3 px-4 py-1 inline-block rounded-full text-white ml-4 mr-4 mt-2 md:mt-0;
 }
 
 .hamburger {
