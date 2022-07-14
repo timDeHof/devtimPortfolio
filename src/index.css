@@ -12,11 +12,11 @@ body {
 
 /* ==== Navbar ==== */
 .nav-bar {
-  @apply container w-fit mx-auto mt-0 bg-slate-800 flex items-center justify-center rounded-full px-4 py-2;
+  @apply container w-fit mx-auto mt-0 bg-slate-800 sm:flex sm:items-center sm:justify-center rounded-full px-4 py-2 hidden;
 }
 
 .nav-link {
-  @apply mx-4 bg-blue3 mt-1 mb-1 px-4 py-2 rounded-xl text-white;
+  @apply mx-2 bg-blue3  px-4 py-2 rounded-xl text-white;
 }
 
 .active {
@@ -28,9 +28,9 @@ body {
 }
 
 .contact-btn {
-  @apply bg-blue3 px-4 py-2 rounded-full text-white ml-4 mr-4;
+  @apply bg-blue3 px-4 py-1 inline-block rounded-full text-white sm:ml-4 sm:mr-4;
 }
 
 .hamburger {
-  @apply inline md:hidden self-start nav-link;
+  @apply inline-block md:hidden self-start nav-link mt-2;
 }

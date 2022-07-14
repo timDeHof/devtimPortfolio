@@ -28,37 +28,36 @@ function App() {
 
 const Navbar = () => {
   const [togglerNav, setTogglerNav] = useState(false);
+  console.log(togglerNav);
   const clickHandler = () => {
     setTogglerNav(!togglerNav);
   };
   return (
-    <div className="flex items-center">
+    <nav className="h-auto md:h-24 p2 bg-blue2 max-w-6xl mx-auto pb-1 pl-1 flex justify-between md:items-center">
       <Link to="/">
         <Logo className="logo" />
       </Link>
-      <nav className="h-auto md:h-24 p2 bg-blue2 max-w-6xl mx-auto pb-1 pl-1 flex justify-between md:items-center">
-        <div className="nav-bar">
-          <NavLink className="nav-link" to="/about" onClick={clickHandler}>
-            <FaUser />
-          </NavLink>
-          <NavLink className="nav-link" to="/portfolio" onClick={clickHandler}>
-            <FaBook />
-          </NavLink>
-          <NavLink className="nav-link" to="/blog" onClick={clickHandler}>
-            <FaNewspaper />
-          </NavLink>
-          <NavLink className="nav-link" to="/contact" onClick={clickHandler}>
-            <FaRegEnvelope />
-          </NavLink>
-        </div>
-      </nav>
+      <div className={togglerNav ? 'flex flex-col gap-4 md:inline' : 'nav-bar'}>
+        <NavLink className="nav-link" to="/about" onClick={clickHandler}>
+          <FaUser />
+        </NavLink>
+        <NavLink className="nav-link" to="/portfolio" onClick={clickHandler}>
+          <FaBook />
+        </NavLink>
+        <NavLink className="nav-link" to="/blog" onClick={clickHandler}>
+          <FaNewspaper />
+        </NavLink>
+        <NavLink className="nav-link" to="/contact" onClick={clickHandler}>
+          <FaRegEnvelope />
+        </NavLink>
+      </div>
       <Link to="/contact">
         <button className="contact-btn">Hire me</button>
       </Link>
       <button className="hamburger" onClick={clickHandler}>
         {togglerNav ? <FaBars /> : <AiOutlineClose />}
       </button>
-    </div>
+    </nav>
   );
 };
 const Home = () => {
